@@ -57,6 +57,8 @@ AsteriskManager Events
     * **talkDuration** - An Integer representing the total number of seconds from the time the call was successfully connected to the time the call was disconnected.
     * **finalStatus** - A String containing a description of the status of the call (i.e. "no answer", "busy", "answered", etc).
 
+#### Asterisk 1.6 extra events
+
 * **userevent** - User generated event, if configured can be used to notify events like DND and CF status change
 
 * **peerstatus** - Fires when a peer status changes
