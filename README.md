@@ -8,8 +8,8 @@ See the test.js script for example usage.
 Requirements
 ============
 
-* [node.js](http://nodejs.org/) -- tested with v0.1.95
-* An [Asterisk](http://www.asterisk.org/) server -- tested with v1.4.21.2
+* [node.js](http://nodejs.org/) -- tested with v0.1.4.0
+* An [Asterisk](http://www.asterisk.org/) server -- tested with v1.4.21.2, 1.6.0.26
 
 
 API Documentation
@@ -57,6 +57,26 @@ AsteriskManager Events
     * **talkDuration** - An Integer representing the total number of seconds from the time the call was successfully connected to the time the call was disconnected.
     * **finalStatus** - A String containing a description of the status of the call (i.e. "no answer", "busy", "answered", etc).
 
+* **userevent** - User generated event, if configured can be used to notify events like DND and CF status change
+
+* **peerstatus** - Fires when a peer status changes
+
+* **peerentry** - Fired for each registered peer after a "SIPPeers" request
+
+* **peerlistcomplete** - Fired at the end of a "SIPPeers" request
+
+* **parkedcall** - Fires when a call is parked
+
+* **parkedcalltimeout** - Fires when a parked call timeout expires
+
+* **parkedcallscomplete** - Fired at the end of a "ParkedCalls" request 
+
+* **queuememeber** - Fired for each queue memeber after a "QueueStatus" request
+
+* **agentcalled** - Fires when a queue is called 
+
+* **newstate** - Fires when a peer status changes
+
 
 AsteriskManager Functions
 -------------------------
@@ -68,6 +88,7 @@ AsteriskManager Functions
     * **port** - An Integer representing the port of the asterisk server. **Default:** 5038
     * **events** - A String indicating what classes of events you wish to listen for ("on" for all events, "off" for no events, or a comma-delimited String containing the specific names of events to listen for). Usually you do not want to change this, except if you are only going to be issuing commands and don't need to listen for events, in which case set this to "off". A list of valid event classes can be found [here](http://www.voip-info.org/wiki/view/Asterisk+manager+API) under "Authorization for various classes". **Default:** "on"
     * **connect_timeout** - An Integer representing the time to wait for a connection to the Asterisk server (in milliseconds). Zero indicates no timeout. **Default:** 0
+    * **version** - Version of the Asterisk server. **Default:** 1.6
 
 * **connect**() - _(void)_ - Attempts to connect to the asterisk server.
 
