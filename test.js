@@ -1,6 +1,6 @@
 var sys = require('sys'), ast = require('./asterisk');
 
-am = new ast.AsteriskManager({user: 'foo', password: 'bar'});
+am = new ast.AsteriskManager({user: 'foo', password: 'bar', version: '1.6'});
 
 am.addListener('serverconnect', function() {
 	sys.puts("CLIENT: Connected!");
